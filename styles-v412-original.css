@@ -165,3 +165,13 @@ html[data-theme="dark"] .money-input .out-stake{
 /* Única regra adicional: Editar acompanha a cor do texto do tema; Excluir continua vermelho. */
 .row-actions{white-space:nowrap}
 .row-actions .edit-btn{color:var(--text)!important;margin-right:8px}
+
+
+/* Login + sincronização em nuvem — usa as mesmas variáveis do tema atual */
+.auth-gate{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:22px;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(16px)}
+.auth-gate[hidden],.auth-form[hidden],.auth-loading[hidden]{display:none!important}.auth-locked .app-shell{pointer-events:none;user-select:none;filter:blur(2px)}
+.auth-card{width:min(420px,100%);background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:var(--shadow);color:var(--text)}
+.auth-brand{display:flex;gap:12px;align-items:center;padding-bottom:22px;margin-bottom:20px;border-bottom:1px solid var(--line)}.auth-brand strong,.auth-brand span{display:block}.auth-brand span{font-size:12px;color:var(--muted);margin-top:2px}
+.auth-form{display:grid;gap:14px}.auth-form h1{margin:4px 0 5px;font-size:28px}.auth-form label{display:grid;gap:7px;font-size:12px;font-weight:750;color:var(--text)}.auth-form input{width:100%}.auth-submit{width:100%;margin-top:3px}.auth-switch{justify-self:center}.auth-error{min-height:18px;font-size:12px;color:var(--red);font-weight:700}.auth-loading{padding:22px 0;text-align:center;color:var(--muted);font-weight:700}
+.account-info{display:grid;gap:4px;padding:14px;border:1px solid var(--line);border-radius:14px;background:var(--panel2);margin-bottom:16px}.account-info span,.account-info small{color:var(--muted);font-size:11px}.account-info strong{overflow-wrap:anywhere}.side-note.sync-pending .dot{background:var(--gold);box-shadow:0 0 12px var(--gold)}.side-note.sync-error .dot{background:var(--red);box-shadow:0 0 12px var(--red)}
+@media(max-width:760px){.auth-card{padding:20px;border-radius:20px}.top-actions{gap:7px}#accountBtn{display:inline-flex!important;align-items:center;justify-content:center}.top-actions .icon-btn{width:40px;padding-left:0;padding-right:0}.top-actions .primary-btn{padding-left:11px;padding-right:11px}.account-modal .modal-card{width:calc(100vw - 28px)}}

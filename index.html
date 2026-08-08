@@ -7,19 +7,37 @@
   <title>SureControl</title>
   <link rel="stylesheet" href="styles-v412-original.css?v=1" />
 </head>
-<body>
+<body class="auth-locked">
+  <div id="authGate" class="auth-gate" aria-live="polite">
+    <div class="auth-card">
+      <div class="auth-brand"><div class="brand-mark">SC</div><div><strong>SureControl</strong><span>Seus dados em qualquer dispositivo</span></div></div>
+      <div id="authLoading" class="auth-loading">Verificando sua sessão...</div>
+      <form id="authForm" class="auth-form" hidden>
+        <div>
+          <p class="eyebrow">CONTA</p>
+          <h1 id="authTitle">Entrar</h1>
+          <p id="authSubtitle" class="subtext">Entre para carregar seus registros salvos na nuvem.</p>
+        </div>
+        <label>E-mail<input id="authEmail" type="email" autocomplete="email" required placeholder="seu@email.com"></label>
+        <label>Senha<input id="authPassword" type="password" autocomplete="current-password" minlength="6" required placeholder="Sua senha"></label>
+        <div id="authError" class="auth-error" role="alert"></div>
+        <button id="authSubmit" class="primary-btn auth-submit" type="submit">Entrar</button>
+        <button id="authSwitch" class="text-btn auth-switch" type="button">Ainda não tenho conta</button>
+      </form>
+    </div>
+  </div>
   <div class="app-shell">
     <aside class="sidebar">
       <div class="brand"><div class="brand-mark">SC</div><div><strong>SureControl</strong><span>Gestão pessoal</span></div></div>
       <nav id="desktopNav" class="nav-list"></nav>
-      <div class="side-note"><span class="dot"></span><div><b>Banco local ativo</b><small>IndexedDB • funciona offline</small></div></div>
+      <div class="side-note" id="syncNote"><span class="dot" id="syncDot"></span><div><b id="syncTitle">Cache local ativo</b><small id="syncDetail">Aguardando login</small></div></div>
     </aside>
 
     <main class="main">
       <header class="topbar">
         <div><p class="eyebrow">PAINEL FINANCEIRO</p><h1 id="pageTitle">Visão geral</h1></div>
         <div class="top-actions">
-          <button class="icon-btn theme-toggle" id="themeToggle" title="Alternar modo noturno" aria-label="Alternar modo noturno"><span class="theme-icon">☾</span></button><button class="icon-btn" id="backupBtn" title="Backup">⇩</button>
+          <button class="icon-btn theme-toggle" id="themeToggle" title="Alternar modo noturno" aria-label="Alternar modo noturno"><span class="theme-icon">☾</span></button><button class="icon-btn" id="accountBtn" title="Minha conta" aria-label="Minha conta">👤</button><button class="icon-btn" id="backupBtn" title="Backup">⇩</button>
           <button class="primary-btn" data-open="quickEntry">+ Nova entrada</button>
         </div>
       </header>
@@ -139,6 +157,10 @@
 
   <dialog id="quickEntry" class="modal"><form method="dialog" class="modal-card small"><div class="modal-head"><div><p class="eyebrow">NOVA ENTRADA</p><h2>O que deseja registrar?</h2></div><button class="close-btn" value="cancel">×</button></div><div class="quick-grid"><button value="cancel" data-nav="surebet" class="quick-card"><span class="qicon">%</span><div><b>Surebet</b><small>Calcular arbitragem</small></div></button><button value="cancel" data-nav="spins" class="quick-card"><span class="qicon">↻</span><div><b>Giros grátis</b><small>Conversão de free spins</small></div></button><button value="cancel" data-open="manualEntry" class="quick-card"><span class="qicon">±</span><div><b>Manual</b><small>Outro ganho ou perda</small></div></button></div></form></dialog>
 
+
+  <dialog id="accountModal" class="modal account-modal"><div class="modal-card small"><div class="modal-head"><div><p class="eyebrow">CONTA</p><h2>Sincronização</h2></div><button class="close-btn" type="button" id="closeAccount">×</button></div><div class="account-info"><span>Conectado como</span><strong id="accountEmail">—</strong><small id="accountSyncText">Dados sincronizados na nuvem</small></div><div class="action-row"><button id="syncNow" class="secondary-btn" type="button">Sincronizar agora</button><button id="signOutBtn" class="ghost-btn" type="button">Sair</button></div></div></dialog>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="app.js"></script>
 </body>
 </html>
