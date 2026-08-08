@@ -1363,5 +1363,12 @@
     "dominio": "xx.bet.br",
     "logo": "assets/bets/xx.png",
     "temLogo": true
+  },
+  {
+    "id": "zeroum",
+    "nome": "ZEROUM",
+    "dominio": "zeroum.bet.br",
+    "logo": "assets/bets/zeroum.png",
+    "temLogo": true
   }
 ]
