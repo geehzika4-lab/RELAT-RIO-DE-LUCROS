@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#f5f8ff" />
   <title>SureControl</title>
-  <link rel="stylesheet" href="styles-v412-original.css?v=1" />
+  <link rel="stylesheet" href="styles.css?v=42-mobile-fix" />
 </head>
 <body class="auth-locked">
   <div id="authGate" class="auth-gate" aria-live="polite">
@@ -140,7 +140,7 @@
       <section id="view-reports" class="view">
         <div class="summary-grid report-summaries"><article class="summary-card"><span>Hoje</span><strong id="repToday">R$ 0,00</strong></article><article class="summary-card"><span>Semana</span><strong id="repWeek">R$ 0,00</strong></article><article class="summary-card"><span>Mês</span><strong id="repMonth">R$ 0,00</strong></article><article class="summary-card accent"><span>Total</span><strong id="repTotal">R$ 0,00</strong></article></div>
         <div class="grid-2">
-          <article class="panel"><p class="eyebrow">EXPORTAÇÃO</p><h2>Relatórios</h2><p class="subtext">Gere uma planilha compatível com Excel ou abra um relatório formatado para salvar como PDF.</p><div class="export-stack"><button id="exportExcel" class="primary-btn">Gerar planilha (.xls)</button><button id="exportPdf" class="secondary-btn">Gerar PDF</button><button id="exportJson" class="ghost-btn">Backup completo (.json)</button><label class="ghost-btn file-label">Importar backup<input id="importJson" type="file" accept="application/json"></label></div></article>
+          <article class="panel"><p class="eyebrow">EXPORTAÇÃO</p><h2>Relatórios</h2><p class="subtext">Gere uma planilha compatível com Excel ou abra um relatório formatado para salvar como PDF.</p><div class="export-stack"><button id="exportExcel" class="primary-btn">Gerar planilha (.csv)</button><button id="exportPdf" class="secondary-btn">Gerar PDF</button><button id="exportJson" class="ghost-btn">Backup completo (.json)</button><label class="ghost-btn file-label">Importar backup<input id="importJson" type="file" accept="application/json"></label></div></article>
           <article class="panel"><p class="eyebrow">DESEMPENHO</p><h2>Hall de resultados</h2><div id="hallStats" class="hall-stats"></div></article>
         </div>
       </section>

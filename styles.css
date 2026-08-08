@@ -161,3 +161,72 @@ html[data-theme="light"] .money-input .out-stake,
 html[data-theme="dark"] .money-input .out-stake{
   font-weight:800 !important;
 }
+
+/* Histórico V4.2 — casas utilizadas, logos pequenos e layout responsivo.
+   Usa apenas as variáveis de tema existentes para preservar as cores claro/escuro. */
+.history-desktop{display:block}
+.history-mobile{display:none}
+.history-table{min-width:980px}
+.history-title{display:block;color:var(--text);font-size:12px;line-height:1.35}
+.history-subtitle{display:block;color:var(--muted);font-size:10px;margin-top:4px}
+.history-houses{display:flex;align-items:stretch;gap:7px;flex-wrap:wrap}
+.history-house-item{display:flex;align-items:center;gap:7px;min-width:96px;max-width:150px;padding:6px 8px;border:1px solid var(--line);background:color-mix(in srgb,var(--panel2) 62%,transparent);border-radius:10px}
+.history-house-item .house-logo{width:24px;height:24px;border-radius:7px;padding:2px;flex:0 0 24px}
+.history-house-item>div{min-width:0}
+.history-house-item b{display:block;color:var(--text);font-size:9px;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.history-house-item small{display:block;color:var(--muted);font-size:9px;margin-top:3px;white-space:nowrap}
+.history-muted{color:var(--muted)}
+.history-result{display:inline-flex;align-items:center;justify-content:center;border:1px solid currentColor;border-radius:999px;padding:5px 8px;font-size:9px;font-weight:850;text-transform:uppercase;letter-spacing:.04em;background:color-mix(in srgb,currentColor 7%,transparent)}
+.history-row-actions{white-space:nowrap}
+.history-row-actions button{display:block;margin:2px 0}
+
+@media(max-width:760px){
+  #view-history .panel{overflow:hidden}
+  #view-history .table-wrap{overflow:visible}
+  .history-desktop{display:none}
+  .history-mobile{display:grid;gap:10px;width:100%}
+  .history-card{width:100%;min-width:0;border:1px solid var(--line);border-radius:16px;padding:13px;background:var(--panel);box-sizing:border-box}
+  .history-card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:11px}
+  .history-card-head>div{min-width:0}
+  .history-card-head small{display:block;color:var(--muted);font-size:10px}
+  .history-card-head h3{margin:4px 0 0;color:var(--text);font-size:15px;line-height:1.25;overflow-wrap:anywhere}
+  .history-card-head p{margin:3px 0 0;color:var(--muted);font-size:10px}
+  .history-card .history-houses{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin:10px 0}
+  .history-card .history-house-item{min-width:0;max-width:none;width:100%;padding:7px;box-sizing:border-box}
+  .history-card .history-house-item .house-logo{width:22px;height:22px;flex-basis:22px}
+  .history-card .history-house-item b{font-size:8.5px}
+  .history-card .history-house-item small{font-size:9px}
+  .history-card-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);padding-top:10px;margin-top:10px}
+  .history-card-stats>div{min-width:0;padding:0 8px;border-right:1px solid var(--line)}
+  .history-card-stats>div:first-child{padding-left:0}.history-card-stats>div:last-child{padding-right:0;border-right:0;text-align:right}
+  .history-card-stats span{display:block;color:var(--muted);font-size:9px;margin-bottom:4px}
+  .history-card-stats strong{display:block;color:var(--text);font-size:11px;overflow-wrap:anywhere}
+  .history-card-actions{display:flex;justify-content:flex-end;gap:10px;border-top:1px solid var(--line);margin-top:10px;padding-top:8px}
+  .history-card-actions button{margin:0}
+}
+@media(max-width:430px){
+  .history-card .history-houses{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* V4.2.1 — correção final do Histórico no mobile. Não altera as cores dos temas. */
+@media (max-width:760px){
+  #view-history .history-desktop{display:none !important}
+  #view-history .history-mobile{display:grid !important;grid-template-columns:minmax(0,1fr);gap:12px;width:100%;min-width:0}
+  #view-history .table-wrap{width:100%;min-width:0;max-width:100%;overflow:hidden}
+  #view-history .panel{width:100%;min-width:0;max-width:100%;overflow:hidden}
+  #view-history .history-card{display:block;width:100%;min-width:0;max-width:100%;padding:14px;margin:0;overflow:hidden}
+  #view-history .history-card-head{width:100%;min-width:0}
+  #view-history .history-result{flex:0 0 auto}
+  #view-history .history-card .history-houses{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;width:100%;min-width:0;margin:12px 0}
+  #view-history .history-card .history-house-item{display:flex;align-items:center;gap:7px;width:100%;min-width:0;max-width:100%;padding:8px;overflow:hidden}
+  #view-history .history-card .history-house-item b{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  #view-history .history-card .history-house-item small{font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  #view-history .history-card-stats{width:100%;min-width:0;gap:0}
+  #view-history .history-card-stats strong{font-size:12px;line-height:1.25;white-space:normal}
+  #view-history .history-card-actions{width:100%}
+}
+@media (max-width:430px){
+  #view-history .history-card .history-houses{grid-template-columns:1fr}
+  #view-history .history-card .history-house-item{min-height:48px}
+  #view-history .history-card-stats{grid-template-columns:1fr 1fr 1fr}
+}
