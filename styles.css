@@ -105,3 +105,59 @@ html[data-theme="dark"] .primary-btn{box-shadow:0 8px 22px rgba(59,130,246,.18)}
 .fix-stake-btn{width:100%;margin-top:13px;border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:12px;padding:10px;font-weight:850;transition:.18s}.fix-stake-btn.active{background:var(--blue);border-color:var(--blue);color:#fff}.simple-sure-card.stake-fixed{border-color:color-mix(in srgb,var(--blue) 52%,var(--line));box-shadow:0 0 0 2px color-mix(in srgb,var(--blue) 11%,transparent),0 9px 24px rgba(37,99,235,.08)}
 .outcome-profit{border:1px solid transparent}.outcome-profit.profit-ok{background:rgba(34,197,94,.08);border-color:rgba(34,197,94,.18)}.outcome-profit.profit-bad{background:rgba(239,68,68,.07);border-color:rgba(239,68,68,.18)}
 @media(max-width:760px){.simple-sure-grid{grid-template-columns:1fr}.house-count-control{align-items:flex-start;flex-direction:column}.house-count-options{width:100%;justify-content:space-between}.house-count-btn{width:42px;height:42px}.calculator-card .action-row{position:sticky;bottom:67px;z-index:8;background:color-mix(in srgb,var(--panel) 92%,transparent);padding:10px 0 2px;backdrop-filter:blur(10px)}.calculator-card .action-row>*{flex:1}}
+
+/* V4.1.1 — ajustes pontuais: contraste da stake no tema claro + mobile sem vazamento */
+html[data-theme="light"] .money-input{
+  background:#0b1017 !important;
+}
+html[data-theme="light"] .money-input input,
+html[data-theme="light"] .money-input input:focus,
+html[data-theme="light"] .money-input input:active{
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
+  caret-color:#fff !important;
+}
+html[data-theme="light"] .money-input span{color:#fff !important;}
+html[data-theme="light"] .money-input input::placeholder{
+  color:rgba(255,255,255,.55) !important;
+  -webkit-text-fill-color:rgba(255,255,255,.55) !important;
+}
+
+@media(max-width:760px){
+  html,body{width:100%;max-width:100%;overflow-x:hidden;}
+  .app-shell,.main,.view,.panel,.topbar,.panel-head{max-width:100%;min-width:0;}
+  .main{width:100%;margin-left:0;padding-left:14px;padding-right:14px;}
+  .topbar{width:100%;gap:10px;}
+  .topbar>div:first-child{min-width:0;}
+  .topbar h1{overflow-wrap:anywhere;}
+  .panel-head{width:100%;}
+  .filters{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);width:100%;max-width:100%;}
+  .filters select,.filters input{width:100%;min-width:0;max-width:100%;}
+  .table-wrap{width:100%;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .data-table{min-width:620px;}
+  .app-footer{width:100%;max-width:100%;padding-left:0;padding-right:0;}
+}
+@media(max-width:430px){
+  .main{padding-left:12px;padding-right:12px;}
+  .filters{grid-template-columns:1fr;}
+}
+
+/* V4.1.2 — ajuste solicitado: texto da stake branco sem alterar o layout */
+html[data-theme="light"] .money-input,
+html[data-theme="dark"] .money-input{
+  background:#0b1017 !important;
+}
+html[data-theme="light"] .money-input span,
+html[data-theme="dark"] .money-input span,
+html[data-theme="light"] .money-input .out-stake,
+html[data-theme="dark"] .money-input .out-stake,
+html[data-theme="light"] .money-input .out-stake:focus,
+html[data-theme="dark"] .money-input .out-stake:focus{
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  opacity:1 !important;
+}
+html[data-theme="light"] .money-input .out-stake,
+html[data-theme="dark"] .money-input .out-stake{
+  font-weight:800 !important;
+}

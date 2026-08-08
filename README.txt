@@ -1,4 +1,4 @@
-RELATÓRIO DE LUCROS V4.2
+SureControl V4
 
 Alterações principais da V4:
 - Calculadora de surebet simplificada para celular.
